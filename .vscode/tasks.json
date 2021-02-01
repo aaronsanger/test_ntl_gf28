@@ -7,9 +7,17 @@
 			"command": "/usr/bin/g++-7",
 			"args": [
 				"-g",
+				"-O2",
+				"-std=c++11",
+				"-pthread",
+				"-march=native",
 				"${file}",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
+				"${fileDirname}/${fileBasenameNoExtension}",
+				"-lntl",
+				"-lgmp",
+				"-lgf2x",
+				"-lm"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
